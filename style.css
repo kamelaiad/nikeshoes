@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #131313;
+}
+
+.container {
+    position: relative;
+}
+
+.container .card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background-color: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #9bdc28;
+    clip-path: circle(150px at 80% 20%);
+    transition: .5s;
+}
+.card:hover::before {
+    clip-path: circle(300px at 80% -20%);
+}
+.card::after{
+    content: "Nike";
+    position: absolute;
+    z-index: 0;
+    top: 30%;
+    left: -15%;
+    color: rgba(255,255,255,0.04);
+    font-size: 12em;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 10px;
+}
+
+.imageBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+
+img  {
+    position: absolute;
+    width: 90%;
+    top: 10%;
+    transition: .5s;
+    transform: translateY(0%) rotate(-25deg) rotateY(180deg);
+    z-index: 1000;
+    
+}
+
+img:hover  {
+
+ transform: translateY(180px);
+        
+}
+
+.card:hover img {
+    top:-10%;
+    transform: translateY(0%) rotate(-10deg) rotateY(180deg);
+   
+}
+
+.contentBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    height: 50%;
+    transition: .5s;
+    top:10%;
+    transform: translateY(80%);
+    text-shadow: 1px 1px 10px black;
+    visibility: none;
+    opacity: 0;
+}
+
+h2 {
+    position: absolute;
+    top: 70%;
+    z-index: 1;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 3px; 
+    transition: .5s;  
+}
+
+.card:hover h2 {
+    
+    top: 40%;
+}
+
+
+
+.card:hover .contentBx {
+    top: 20%;
+    transform: translateY(-40%);
+    visibility: none;
+    opacity: 1;
+}
+
+
+.size, 
+.Color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.size {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1em;
+    top: 20%;
+
+}
+
+
+
+.size span {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    padding:5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: .9s;
+    cursor: pointer;
+    
+}
+
+.size span:hover {
+    
+    transform: scale(1.2);
+    background-color: #9bdc28;
+    transition: .2s;
+    
+}
+
+
+.Color {
+    padding-top: 15px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1em;
+    top: 30%;
+}
+
+.Color span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    padding:5px;
+    border-radius: 50%;
+    margin-left: 15px;
+    transition: .9s;
+    cursor: pointer; 
+}
+
+.Color span:first-of-type {
+    background-color: #9bdc28 ;
+}
+.Color span:nth-of-type(2) {
+    background-color: #03a9f4 ;
+}
+.Color span:nth-of-type(3) {
+    background-color: #e91e63 ;
+}
+
+.Color span:hover {
+    border: 2px solid white;
+    transform: scale(1.1);
+    transition: .2s;
+}
+
+
+a {
+    background-color: white;
+    padding: 10px 60px;
+    text-decoration: none;
+    color: black;
+    position: absolute;
+    top: 55%;
+    border-radius: 20px;
+}
+
+a:hover {
+    border-radius: 45px;
+    transform: scale(1.1);
+}
